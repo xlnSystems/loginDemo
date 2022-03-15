@@ -2,7 +2,7 @@
   functions = "functions"
 
   [[redirects]]
-  from = "/sasa"
+  from = "/"
   to ="/sasa"
   force = true
   status = 200
