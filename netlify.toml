@@ -1,7 +1,17 @@
 [build]
   functions = "functions"
 
-  
+  [[redirects]]
+  from = "/*"
+  to = "/sasa"
+  status = 200
+  force = true
+  conditions = {Role = ["registered"]}
+      
+[[redirects]]
+  from = "/*"
+  to = "/login"
+  status = 302
 
 
 
