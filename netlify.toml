@@ -8,11 +8,7 @@
   status = 200
   conditions = {Role = ["registered"]}
 
-[[redirects]]
-  from = "/sasa"
-  to = "/login"
-  force = true
-  status = 401
+
 
  
 
