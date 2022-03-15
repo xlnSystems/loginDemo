@@ -36,7 +36,18 @@ body {
 #loginMenu {
   position: absolute;
   top: 3%;
-  right: 3%;
+  right: 5%;
+}
+
+#profileIcon {
+  color: snow;
+  position: absolute;
+  top: 4%;
+  right: 1.5%;
+}
+#profileIcon:hover {
+  color: lightblue;
+  cursor: pointer;
 }
 a.netlify-identity-logout,
 a.netlify-identity-login,

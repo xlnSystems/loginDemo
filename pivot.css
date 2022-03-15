@@ -3,7 +3,7 @@
 html,
 body {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
@@ -148,7 +148,18 @@ table.pvtTable tbody tr th {
 #loginMenu {
   position: absolute;
   top: 3%;
-  right: 3%;
+  right: 5%;
+}
+
+#profileIcon {
+  color: snow;
+  position: absolute;
+  top: 4%;
+  right: 1.5%;
+}
+#profileIcon:hover {
+  color: lightblue;
+  cursor: pointer;
 }
 a.netlify-identity-logout,
 a.netlify-identity-login,
@@ -203,17 +214,17 @@ li.netlify-identity-item.netlify-identity-user-details {
   padding: 20px;
 }
 
-.c {
+/* .c {
   position: relative;
   background-color: snow;
   grid-column: 1 / span 10;
   grid-row: 3;
   padding: 20px;
-}
+} */
 
 .g {
   grid-column: 1 / span 10;
-  grid-row: 4;
+  grid-row: 3;
   padding: 20px;
   background-color: #31332a;
   border-top: solid #876653 5px;
