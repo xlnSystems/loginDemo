@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sasa Login Sample</title>
+    <link rel="stylesheet" href="login.css" />
+    <script
+      type="text/javascript"
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Sasa Demo App</h1>
+      <div data-netlify-identity-menu id="menu"></div>
+    </div>
+     <div class="add-task-wrapper">
+        <input type="text" v-model="newTaskInput" @keydown.enter="addTask" />
+        <button @click="addTask">Add task</button>
+      </div>
+      <div class="task" v-for="task in tasks" :key="task.id">
+        <div class="task-main">
+          <span>{{ task.name }}</span>
+          <span class="buttons">
+            <button onclick="removeTask(task.id)">❌</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

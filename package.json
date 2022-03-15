@@ -1,0 +1,14 @@
+{
+  "name": "login",
+  "devDependencies": {
+    "@brianmmdev/faunaservice": "^1.0.5",
+    "eslint": "^8.10.0"},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazavazav/loginSasaDemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lazavazav/loginSasaDemo/issues"
+  },
+  "homepage": "https://github.com/lazavazav/loginSasaDemo#readme"
+}
