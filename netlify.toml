@@ -9,6 +9,14 @@
   conditions = {Role = ["registered"]}
 
 
+  [[redirects]]
+  from = "/"
+  to ="/login"
+  force = true
+  status = 200
+ 
+
+
 
  
 
