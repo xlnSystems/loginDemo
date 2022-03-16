@@ -7,8 +7,8 @@ const format_stringify = (data) => JSON.stringify(data, null, 2);
 // showCurrentInfo updates the UI to show the current user data passed in to it
 const showCurrentInfo = (user) => {
   const str = format_stringify(user);
-  nameInput.value = user.user_metadata.full_name;
-  emailInput.value = user.email;
+  nameInput.innerHTML = user.user_metadata.full_name;
+  emailInput.innerHTML = user.email;
 };
 // open function opens the netlify-identity-widget signup/sign-in modal
 // const open = () => netlifyIdentity.open();
@@ -30,6 +30,13 @@ const showCurrentInfo = (user) => {
 netlifyIdentity.on('login', (user) => {
   showCurrentInfo(user);
 });
+
+const redirectUserOnLogout = () => {
+  window.location.replace('login.html');
+  netlifyIdentity.close();
+};
+
+netlifyIdentity.on('logout', redirectUserOnLogout);
 // if (user.user_metadata.full_name) {
 //   textArea.value = format_stringify(
 //     user.user_metadata.full_name

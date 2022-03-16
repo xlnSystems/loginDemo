@@ -87,10 +87,11 @@
 //   container.appendChild(b2);
 // };
 
-// const handleUserStateChange = (user) => {
-//   updateUserInfo(user);
-// };
+const redirectUser = () => {
+  window.location.replace('sasa.html');
+  netlifyIdentity.close();
+};
 
 // netlifyIdentity.on('init', handleUserStateChange);
-// netlifyIdentity.on('login', handleUserStateChange);
+netlifyIdentity.on('login', redirectUser);
 // netlifyIdentity.on('logout', handleUserStateChange);

@@ -130,6 +130,13 @@ form {
   background-color: #ebe6df;
   border-radius: 5px;
 }
+#nameInput,
+#emailInput {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: 1px solid lightblue;
+}
 
 .g {
   grid-column: 1 / span 10;

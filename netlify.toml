@@ -8,10 +8,7 @@
   force = true
   conditions = {Role = ["registered"]}
       
-[[redirects]]
-  from = "/"
-  to = "/login"
-  status = 302
+
 
 
 
