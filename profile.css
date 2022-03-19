@@ -130,8 +130,7 @@ form {
   background-color: #ebe6df;
   border-radius: 5px;
 }
-#nameInput,
-#emailInput {
+.container {
   width: 100%;
   height: auto;
   background-color: white;
