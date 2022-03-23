@@ -247,7 +247,7 @@
         </div>
         <div class="header">
           <div data-netlify-identity-menu id="loginMenu"></div>
-          <p class="title">User Profile Page</p>
+          <p class="title">Your Profile</p>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -271,40 +271,131 @@
       <div class="box b">
         <form>
           <div class="mb-3">
-            <label for="nameInput" class="form-label">Name</label>
-            <div class="container" id="nameInput"></div>
+            <label for="nameInput" class="form-label"
+              >Name
+              <span
+                class="material-icons"
+                id="nameEdit"
+                onclick="toggleNameEdit()"
+              >
+                edit
+              </span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              placeholder="update your name, then click enter"
+              style="display: none"
+            />
+            <div class="container" id="nameDiv"></div>
           </div>
           <div class="mb-3">
-            <label for="emailInput" class="form-label">Email</label>
-            <div class="container" id="emailInput"></div>
+            <label for="emailDiv" class="form-label"
+              >Email
+              <span class="material-icons" id="emailEdit"> edit </span></label
+            >
+            <div class="container" id="emailDiv"></div>
+          </div>
+          <div class="mb-3" style="position: relative">
+            <label for="passInput" class="form-label"
+              >Password
+              <span
+                class="material-icons"
+                id="passEdit"
+                onclick="showMessage();"
+              >
+                edit
+              </span></label
+            >
+            <div class="container" id="passDiv"></div>
+            <div
+              class="position-absolute bottom-0 end-0 p-3"
+              id="passMessage"
+              style="display: none"
+            >
+              <div class="container">
+                <div>
+                  Click button if you would like to receive an email to change
+                  your password.
+                  <div class="mt-2 pt-2 border-top">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm"
+                      id="changePass"
+                    >
+                      Change Password
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      id="passCloseBtn"
+                      onclick="closeMessage();"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="mb-3">
-            <label for="streetInput" class="form-label">Street Address</label>
+            <label for="streetInput" class="form-label"
+              >Street Address
+              <span
+                class="material-icons"
+                id="streetEdit"
+                onclick="toggleStreetEdit()"
+              >
+                edit
+              </span></label
+            >
             <input
               type="text"
               class="form-control"
               id="streetInput"
-              placeholder="add your street address"
+              placeholder="update your street address, then click enter"
+              style="display: none"
             />
             <div class="container" id="streetDiv"></div>
           </div>
           <div class="mb-3">
-            <label for="cityInput" class="form-label">City</label>
+            <label for="cityInput" class="form-label"
+              >City
+              <span
+                class="material-icons"
+                id="cityEdit"
+                onclick="toggleCityEdit()"
+              >
+                edit
+              </span></label
+            >
             <input
               type="text"
               class="form-control"
               id="cityInput"
-              placeholder="add your city"
+              placeholder="update your city, then click enter"
+              style="display: none"
             />
             <div class="container" id="cityDiv"></div>
           </div>
           <div class="mb-3">
-            <label for="stateInput" class="form-label">State</label>
+            <label for="stateInput" class="form-label"
+              >State
+              <span
+                class="material-icons"
+                id="stateEdit"
+                onclick="toggleStateEdit()"
+              >
+                edit
+              </span></label
+            >
             <select
               class="form-select"
-              placeholder="select a state"
-              aria-label="select a state"
+              aria-label="update your state"
               id="stateInput"
+              style="display: none"
+              onchange="updateState()"
             >
               <option selected>Select a State</option>
               <option value="AL">Alabama</option>
@@ -362,18 +453,25 @@
             <div class="container" id="stateDiv"></div>
           </div>
           <div>
-            <label for="zipInput" class="form-label">Zipcode</label>
+            <label for="zipInput" class="form-label"
+              >Zipcode
+              <span
+                class="material-icons"
+                id="zipEdit"
+                onclick="toggleZipEdit()"
+              >
+                edit
+              </span></label
+            >
             <input
               type="text"
               class="form-control"
               id="zipInput"
-              placeholder="add your zipcode"
+              placeholder="update your zipcode, then click enter"
+              style="display: none"
             />
             <div class="container" id="zipDiv"></div>
           </div>
-          <button type="submit" class="btn btn-primary" id="profileBtn">
-            Update
-          </button>
         </form>
       </div>
       <footer class="box g">
@@ -404,5 +502,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="profile.js"></script>
+    <script src="bundle.js"></script>
   </body>
 </html>
