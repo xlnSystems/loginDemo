@@ -9,13 +9,12 @@ const zipDiv = document.querySelector('#zipDiv');
 
 // format_stringify is a function that takes in an object and returns formatted JSON
 const format_stringify = (data) => JSON.stringify(data, null, 2);
+
 // showCurrentInfo updates the UI to show the current user data passed in to it
 const showCurrentInfo = (user) => {
   const str = format_stringify(user);
-  console.log(str);
   nameDiv.innerHTML = user.user_metadata.full_name;
   emailDiv.innerHTML = user.email;
-  passDiv.innerHTML = '************';
 };
 
 const toggleNameEdit = () => {
@@ -165,6 +164,15 @@ zipInput.addEventListener('keydown', function (e) {
   }
 });
 
+const togglePassEdit = () => {
+  let passInput = document.querySelector('#passInput');
+  if (passInput.style.display === 'none') {
+    passInput.style.display = 'block';
+  } else {
+    passInput.style.display = 'none';
+  }
+};
+
 // Adding an event listener on the netlify identity widget to show the current users data
 netlifyIdentity.on('login', (user) => {
   showCurrentInfo(user);
@@ -215,11 +223,6 @@ const redirectUserOnLogout = () => {
 
 netlifyIdentity.on('logout', redirectUserOnLogout);
 
-let messageBox = document.getElementById('passMessage');
-const showMessage = () => {
-  messageBox.style.display = 'block';
-};
-
 const closeMessage = () => {
-  messageBox.style.display = 'none';
+  document.getElementById('passMessage').style.display = 'none';
 };

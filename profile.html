@@ -270,17 +270,8 @@
       </div>
       <div class="box b">
         <form>
-          <div class="mb-3">
-            <label for="nameInput" class="form-label"
-              >Name
-              <span
-                class="material-icons"
-                id="nameEdit"
-                onclick="toggleNameEdit()"
-              >
-                edit
-              </span></label
-            >
+          <div class="mb-3" id="nameBox">
+            <label for="nameInput" class="form-label">Name</label>
             <input
               type="text"
               class="form-control"
@@ -289,6 +280,13 @@
               style="display: none"
             />
             <div class="container" id="nameDiv"></div>
+            <span
+              class="material-icons"
+              id="nameEdit"
+              onclick="toggleNameEdit()"
+            >
+              edit
+            </span>
           </div>
           <div class="mb-3">
             <label for="emailDiv" class="form-label"
@@ -297,7 +295,50 @@
             >
             <div class="container" id="emailDiv"></div>
           </div>
-          <div class="mb-3" style="position: relative">
+
+          <div class="mb-3" id="passBox" style="position: relative">
+            <label for="passInput" class="form-label"
+              >Password
+              <span
+                class="material-icons"
+                id="passEdit"
+                onclick="togglePassEdit()"
+              >
+                edit
+              </span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="passInput"
+              placeholder="update your password, then click enter"
+              style="display: none"
+            />
+            <div class="container" id="passDiv"></div>
+
+            <div
+              class="position-absolute bottom-0 end-0 p-3"
+              id="passMessage"
+              style="display: none"
+            >
+              <div class="container">
+                <div>
+                  You have sucessfully changed your password!
+                  <div class="mt-2 pt-2 border-top">
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      id="passCloseBtn"
+                      onclick="closeMessage();"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="mb-3" style="position: relative">
             <label for="passInput" class="form-label"
               >Password
               <span
@@ -338,7 +379,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="mb-3">
             <label for="streetInput" class="form-label"
               >Street Address

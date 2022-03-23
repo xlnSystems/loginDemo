@@ -136,6 +136,14 @@ form {
   background-color: white;
   border: 1px solid lightblue;
 }
+#nameBox {
+  position: relative;
+}
+#nameEdit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .g {
   grid-column: 1 / span 10;
