@@ -216,3 +216,13 @@ form {
     display: none;
   }
 }
+
+@media (max-width: 576px) {
+  li.netlify-identity-item.netlify-identity-user-details {
+    display: none;
+  }
+  form {
+  min-width: 400px;
+  padding: 15px;
+  }
+}
