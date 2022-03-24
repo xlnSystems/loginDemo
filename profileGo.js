@@ -5,31 +5,6 @@ auth = new GoTrue({
   audience: '',
   setCookie: false,
 });
-// let recoveryButton = document.querySelector('#changePass');
-// recoveryButton.addEventListener('click', () => {
-//   const user = auth.currentUser();
-//   const email = user.email;
-//   const password = user.password;
-//   auth;
-//   // .requestPasswordRecovery(email)
-//   user
-//     .update({
-//       email: email.value,
-//       password: password.value,
-//     })
-//     .then((response) =>
-//       console.log('Logged in as %s', JSON.stringify({ response }))
-//     )
-//     .catch((error) => console.log('Failed to verify recover token: %o', error));
-//   closeMessage();
-// });
-
-// const user = auth.currentUser();
-
-// user.update({
-//      email: email.value,
-//      password: password.value,
-//    });
 
 const updatePass = () => {
   let passVal = document.querySelector('#passInput').value;

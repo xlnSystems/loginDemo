@@ -125,24 +125,25 @@ li.netlify-identity-item.netlify-identity-user-details {
 }
 form {
   min-width: 430px;
-  border: 2px solid #2e9cca;
+  /* border: 10px solid #2e9cca; */
   padding: 15px;
   background-color: #ebe6df;
   border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;"
 }
 .container {
   width: 100%;
   height: auto;
   background-color: white;
-  border: 1px solid lightblue;
 }
-#nameBox {
-  position: relative;
-}
-#nameEdit {
-  position: absolute;
-  top: 0;
-  right: 0;
+
+.flexbox {
+  display: flex;
+  justify-content: flex-start;
+  height: auto;
+  border: 2px solid lightblue;
+  background-color: white;
+  padding: 5px;
 }
 
 .g {
@@ -186,7 +187,8 @@ form {
   color: #028cdb;
 }
 .material-icons:hover {
-  color: #876653;
+  color: #02b3db;
+  cursor: pointer;
 }
 #sidebar a {
   color: #253d54;

@@ -279,34 +279,27 @@
               placeholder="update your name, then click enter"
               style="display: none"
             />
-            <div class="container" id="nameDiv"></div>
-            <span
-              class="material-icons"
-              id="nameEdit"
-              onclick="toggleNameEdit()"
-            >
-              edit
-            </span>
+            <div class="flexbox">
+              <div class="container" id="nameDiv"></div>
+              <span
+                class="material-icons"
+                id="nameEdit"
+                onclick="toggleNameEdit()"
+              >
+                edit
+              </span>
+            </div>
           </div>
           <div class="mb-3">
-            <label for="emailDiv" class="form-label"
-              >Email
-              <span class="material-icons" id="emailEdit"> edit </span></label
-            >
-            <div class="container" id="emailDiv"></div>
+            <label for="emailDiv" class="form-label">Email</label>
+            <div class="flexbox">
+              <div class="container" id="emailDiv"></div>
+              <span class="material-icons"> edit </span>
+            </div>
           </div>
 
           <div class="mb-3" id="passBox" style="position: relative">
-            <label for="passInput" class="form-label"
-              >Password
-              <span
-                class="material-icons"
-                id="passEdit"
-                onclick="togglePassEdit()"
-              >
-                edit
-              </span></label
-            >
+            <label for="passInput" class="form-label">Password</label>
             <input
               type="text"
               class="form-control"
@@ -314,7 +307,16 @@
               placeholder="update your password, then click enter"
               style="display: none"
             />
-            <div class="container" id="passDiv"></div>
+            <div class="flexbox">
+              <div class="container" id="passDiv"></div>
+              <span
+                class="material-icons"
+                id="passEdit"
+                onclick="togglePassEdit()"
+              >
+                edit
+              </span>
+            </div>
 
             <div
               class="position-absolute bottom-0 end-0 p-3"
@@ -338,59 +340,9 @@
               </div>
             </div>
           </div>
-          <!-- <div class="mb-3" style="position: relative">
-            <label for="passInput" class="form-label"
-              >Password
-              <span
-                class="material-icons"
-                id="passEdit"
-                onclick="showMessage();"
-              >
-                edit
-              </span></label
-            >
-            <div class="container" id="passDiv"></div>
-            <div
-              class="position-absolute bottom-0 end-0 p-3"
-              id="passMessage"
-              style="display: none"
-            >
-              <div class="container">
-                <div>
-                  Click button if you would like to receive an email to change
-                  your password.
-                  <div class="mt-2 pt-2 border-top">
-                    <button
-                      type="button"
-                      class="btn btn-primary btn-sm"
-                      id="changePass"
-                    >
-                      Change Password
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary btn-sm"
-                      id="passCloseBtn"
-                      onclick="closeMessage();"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+
           <div class="mb-3">
-            <label for="streetInput" class="form-label"
-              >Street Address
-              <span
-                class="material-icons"
-                id="streetEdit"
-                onclick="toggleStreetEdit()"
-              >
-                edit
-              </span></label
-            >
+            <label for="streetInput" class="form-label">Street Address </label>
             <input
               type="text"
               class="form-control"
@@ -398,19 +350,19 @@
               placeholder="update your street address, then click enter"
               style="display: none"
             />
-            <div class="container" id="streetDiv"></div>
-          </div>
-          <div class="mb-3">
-            <label for="cityInput" class="form-label"
-              >City
+            <div class="flexbox">
+              <div class="container" id="streetDiv"></div>
               <span
                 class="material-icons"
-                id="cityEdit"
-                onclick="toggleCityEdit()"
+                id="streetEdit"
+                onclick="toggleStreetEdit()"
               >
                 edit
-              </span></label
-            >
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="cityInput" class="form-label">City </label>
             <input
               type="text"
               class="form-control"
@@ -418,19 +370,19 @@
               placeholder="update your city, then click enter"
               style="display: none"
             />
-            <div class="container" id="cityDiv"></div>
-          </div>
-          <div class="mb-3">
-            <label for="stateInput" class="form-label"
-              >State
+            <div class="flexbox">
+              <div class="container" id="cityDiv"></div>
               <span
                 class="material-icons"
-                id="stateEdit"
-                onclick="toggleStateEdit()"
+                id="cityEdit"
+                onclick="toggleCityEdit()"
               >
                 edit
-              </span></label
-            >
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="stateInput" class="form-label">State </label>
             <select
               class="form-select"
               aria-label="update your state"
@@ -491,19 +443,19 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-            <div class="container" id="stateDiv"></div>
-          </div>
-          <div>
-            <label for="zipInput" class="form-label"
-              >Zipcode
+            <div class="flexbox">
+              <div class="container" id="stateDiv"></div>
               <span
                 class="material-icons"
-                id="zipEdit"
-                onclick="toggleZipEdit()"
+                id="stateEdit"
+                onclick="toggleStateEdit()"
               >
                 edit
-              </span></label
-            >
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="zipInput" class="form-label">Zipcode </label>
             <input
               type="text"
               class="form-control"
@@ -511,7 +463,16 @@
               placeholder="update your zipcode, then click enter"
               style="display: none"
             />
-            <div class="container" id="zipDiv"></div>
+            <div class="flexbox">
+              <div class="container" id="zipDiv"></div>
+              <span
+                class="material-icons"
+                id="zipEdit"
+                onclick="toggleZipEdit()"
+              >
+                edit
+              </span>
+            </div>
           </div>
         </form>
       </div>
