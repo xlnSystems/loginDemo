@@ -120,12 +120,9 @@ li.netlify-identity-item.netlify-identity-user-details {
   grid-row: 2;
   padding: 20px;
 }
-#profileBtn {
-  margin: 10px;
-}
+
 form {
   min-width: 430px;
-  /* border: 10px solid #2e9cca; */
   padding: 15px;
   background-color: #ebe6df;
   border-radius: 5px;
@@ -144,6 +141,19 @@ form {
   border: 2px solid lightblue;
   background-color: white;
   padding: 5px;
+}
+.inputContainer {
+  display: inline-block;
+  position: relative;
+  height: auto;
+  border: 1px solid grey;
+  background-color: white;
+  padding: 5px;
+}
+.inputContainer span {
+  position: absolute;
+  top: 10px;
+  right: 5px;
 }
 
 .g {

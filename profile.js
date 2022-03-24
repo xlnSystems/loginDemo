@@ -16,14 +16,12 @@ const showCurrentInfo = (user) => {
   nameDiv.innerHTML = user.user_metadata.full_name;
   emailDiv.innerHTML = user.email;
 };
-
-const toggleNameEdit = () => {
-  let nameInput = document.querySelector('#nameInput');
-  if (nameInput.style.display === 'none') {
-    nameInput.style.display = 'block';
-  } else {
-    nameInput.style.display = 'none';
-  }
+let nameBox = document.querySelector('#nameContainer');
+const openNameEdit = () => {
+  nameBox.style.display = 'block';
+};
+const closeNameEdit = () => {
+  nameBox.style.display = 'none';
 };
 
 const updateName = async () => {
@@ -37,7 +35,8 @@ const updateName = async () => {
   const userName = await netlifyIdentity.gotrue
     .currentUser()
     .update(user_metadata);
-  nameInput.style.display = 'none';
+  nameBox.style.display = 'none';
+  nameInput.value = '';
 };
 
 let nameInput = document.querySelector('#nameInput');
@@ -48,13 +47,12 @@ nameInput.addEventListener('keydown', function (e) {
   }
 });
 
-const toggleStreetEdit = () => {
-  let streetInput = document.querySelector('#streetInput');
-  if (streetInput.style.display === 'none') {
-    streetInput.style.display = 'block';
-  } else {
-    streetInput.style.display = 'none';
-  }
+let streetBox = document.querySelector('#streetContainer');
+const openStreetEdit = () => {
+  streetBox.style.display = 'block';
+};
+const closeStreetEdit = () => {
+  streetBox.style.display = 'none';
 };
 
 const updateStreet = async () => {
@@ -68,7 +66,8 @@ const updateStreet = async () => {
   const userStreet = await netlifyIdentity.gotrue
     .currentUser()
     .update(user_metadata);
-  streetInput.style.display = 'none';
+  streetBox.style.display = 'none';
+  streetInput.value = '';
 };
 
 let streetInput = document.querySelector('#streetInput');
@@ -79,13 +78,12 @@ streetInput.addEventListener('keydown', function (e) {
   }
 });
 
-const toggleCityEdit = () => {
-  let cityInput = document.querySelector('#cityInput');
-  if (cityInput.style.display === 'none') {
-    cityInput.style.display = 'block';
-  } else {
-    cityInput.style.display = 'none';
-  }
+let cityBox = document.querySelector('#cityContainer');
+const openCityEdit = () => {
+  cityBox.style.display = 'block';
+};
+const closeCityEdit = () => {
+  cityBox.style.display = 'none';
 };
 
 const updateCity = async () => {
@@ -99,7 +97,8 @@ const updateCity = async () => {
   const userCity = await netlifyIdentity.gotrue
     .currentUser()
     .update(user_metadata);
-  cityInput.style.display = 'none';
+  cityBox.style.display = 'none';
+  cityInput.value = '';
 };
 
 let cityInput = document.querySelector('#cityInput');
@@ -110,13 +109,12 @@ cityInput.addEventListener('keydown', function (e) {
   }
 });
 
-const toggleStateEdit = () => {
-  let stateInput = document.querySelector('#stateInput');
-  if (stateInput.style.display === 'none') {
-    stateInput.style.display = 'block';
-  } else {
-    stateInput.style.display = 'none';
-  }
+let stateBox = document.querySelector('#stateContainer');
+const openStateEdit = () => {
+  stateBox.style.display = 'block';
+};
+const closeStateEdit = () => {
+  stateBox.style.display = 'none';
 };
 
 const updateState = async () => {
@@ -130,16 +128,16 @@ const updateState = async () => {
   const userState = await netlifyIdentity.gotrue
     .currentUser()
     .update(user_metadata);
-  stateInput.style.display = 'none';
+  stateBox.style.display = 'none';
+  stateInput.value = '';
 };
 
-const toggleZipEdit = () => {
-  let zipInput = document.querySelector('#zipInput');
-  if (zipInput.style.display === 'none') {
-    zipInput.style.display = 'block';
-  } else {
-    zipInput.style.display = 'none';
-  }
+let zipBox = document.querySelector('#zipContainer');
+const openZipEdit = () => {
+  zipBox.style.display = 'block';
+};
+const closeZipEdit = () => {
+  zipBox.style.display = 'none';
 };
 
 const updateZip = async () => {
@@ -153,7 +151,8 @@ const updateZip = async () => {
   const userZip = await netlifyIdentity.gotrue
     .currentUser()
     .update(user_metadata);
-  zipInput.style.display = 'none';
+  zipBox.style.display = 'none';
+  zipInput.value = '';
 };
 
 let zipInput = document.querySelector('#zipInput');
@@ -164,13 +163,20 @@ zipInput.addEventListener('keydown', function (e) {
   }
 });
 
-const togglePassEdit = () => {
-  let passInput = document.querySelector('#passInput');
-  if (passInput.style.display === 'none') {
-    passInput.style.display = 'block';
-  } else {
-    passInput.style.display = 'none';
-  }
+// const togglePassEdit = () => {
+//   let passInput = document.querySelector('#passInput');
+//   if (passInput.style.display === 'none') {
+//     passInput.style.display = 'block';
+//   } else {
+//     passInput.style.display = 'none';
+//   }
+// };
+let passBox = document.querySelector('#passContainer');
+const openPassEdit = () => {
+  passBox.style.display = 'block';
+};
+const closePassEdit = () => {
+  passBox.style.display = 'none';
 };
 
 // Adding an event listener on the netlify identity widget to show the current users data
