@@ -15,7 +15,7 @@ const showCurrentInfo = (user) => {
   const str = format_stringify(user);
   nameDiv.innerHTML = user.user_metadata.full_name;
   emailDiv.innerHTML = user.email;
-  passDiv.placeholder = 'click icon to update your password';
+  passDiv.innerHTML = '********';
 };
 let nameBox = document.querySelector('#nameContainer');
 const openNameEdit = () => {
