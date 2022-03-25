@@ -15,6 +15,7 @@ const showCurrentInfo = (user) => {
   const str = format_stringify(user);
   nameDiv.innerHTML = user.user_metadata.full_name;
   emailDiv.innerHTML = user.email;
+  passDiv.placeholder = 'click icon to update your password';
 };
 let nameBox = document.querySelector('#nameContainer');
 const openNameEdit = () => {
@@ -163,14 +164,6 @@ zipInput.addEventListener('keydown', function (e) {
   }
 });
 
-// const togglePassEdit = () => {
-//   let passInput = document.querySelector('#passInput');
-//   if (passInput.style.display === 'none') {
-//     passInput.style.display = 'block';
-//   } else {
-//     passInput.style.display = 'none';
-//   }
-// };
 let passBox = document.querySelector('#passContainer');
 const openPassEdit = () => {
   passBox.style.display = 'block';
