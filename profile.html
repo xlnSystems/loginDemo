@@ -298,11 +298,57 @@
               </span>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="emailDiv" class="form-label">Email</label>
+
+          <div class="mb-3" id="emailBox" style="position: relative">
+            <label for="emailInput" class="form-label">Email</label>
+            <div
+              class="inputContainer"
+              id="emailContainer"
+              style="display: none"
+            >
+              <input
+                type="text"
+                class="form-control"
+                id="emailInput"
+                placeholder="update your email, then click enter"
+              />
+              <span class="material-icons" onclick="closeEmailEdit()">
+                clear
+              </span>
+            </div>
             <div class="flexbox">
               <div class="container" id="emailDiv"></div>
-              <!-- <span class="material-icons"> edit </span> -->
+              <span
+                class="material-icons"
+                id="emailEdit"
+                onclick="openEmailEdit()"
+              >
+                edit
+              </span>
+            </div>
+            <div
+              class="position-absolute bottom-0 end-0 p-3"
+              id="emailMessage"
+              style="display: none"
+            >
+              <div
+                class="container border border-info border-4"
+                style="padding: 5px"
+              >
+                <div>
+                  An update link has been sent to you. Please check your inbox!
+                  <div class="mt-2 pt-2 border-top">
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      id="emailCloseBtn"
+                      onclick="closeEmailMessage();"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -339,15 +385,18 @@
               id="passMessage"
               style="display: none"
             >
-              <div class="container">
+              <div
+                class="container border border-info border-4"
+                style="padding: 5px"
+              >
                 <div>
-                  You have sucessfully changed your password!
+                  You have successfully changed your password!
                   <div class="mt-2 pt-2 border-top">
                     <button
                       type="button"
                       class="btn btn-secondary btn-sm"
                       id="passCloseBtn"
-                      onclick="closeMessage();"
+                      onclick="closePassMessage();"
                     >
                       Close
                     </button>

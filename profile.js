@@ -172,6 +172,14 @@ const closePassEdit = () => {
   passBox.style.display = 'none';
 };
 
+let emailBox = document.querySelector('#emailContainer');
+const openEmailEdit = () => {
+  emailBox.style.display = 'block';
+};
+const closeEmailEdit = () => {
+  emailBox.style.display = 'none';
+};
+
 // Adding an event listener on the netlify identity widget to show the current users data
 netlifyIdentity.on('login', (user) => {
   showCurrentInfo(user);
@@ -215,13 +223,9 @@ async function postData(url = '', data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-const redirectUserOnLogout = () => {
-  window.location.replace('login.html');
-  netlifyIdentity.close();
-};
-
-netlifyIdentity.on('logout', redirectUserOnLogout);
-
-const closeMessage = () => {
+const closePassMessage = () => {
   document.getElementById('passMessage').style.display = 'none';
+};
+const closeEmailMessage = () => {
+  document.getElementById('emailMessage').style.display = 'none';
 };

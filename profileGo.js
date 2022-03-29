@@ -9,6 +9,7 @@ auth = new GoTrue({
 const updatePass = () => {
   let passVal = document.querySelector('#passInput').value;
   document.querySelector('#passDiv').innerHTML = passVal;
+  let passBox = document.querySelector('#passContainer');
   const user = auth.currentUser();
   user
     .update({
@@ -17,7 +18,7 @@ const updatePass = () => {
 
     .then((response) => {
       console.log('Logged in as %s');
-      passInput.style.display = 'none';
+      passBox.style.display = 'none';
       document.querySelector('#passMessage').style.display = 'block';
       let passStars = passDiv.innerHTML;
       for (i = 0; i < passStars.length; i++) {
