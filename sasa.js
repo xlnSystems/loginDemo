@@ -256,10 +256,3 @@ function SVS_B(eAmt, position) {
   if (position == 'center' || position == '') window.scrollBy(0, eAmt / 2);
   if (position == 'top') window.scrollBy(0, eAmt);
 }
-
-const redirectUserOnLogout = () => {
-  window.location.replace('login.html');
-  netlifyIdentity.close();
-};
-
-netlifyIdentity.on('logout', redirectUserOnLogout);
