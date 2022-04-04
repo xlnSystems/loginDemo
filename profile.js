@@ -228,5 +228,4 @@ const closePassMessage = () => {
 };
 const closeEmailMessage = () => {
   document.getElementById('emailMessage').style.display = 'none';
-  netlifyIdentity.logout();
 };
