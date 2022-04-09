@@ -289,7 +289,7 @@
               alt="Book an appointment with SASA using Setmore"
           /></a>
         </div>
-        <div class="container">
+        <!-- <div class="container">
           <iframe
             class="responsive-iframe"
             src="https://outlook.office365.com/calendar/published/e3023ebcf76947fc8395f98b55451499@xlnsystems.com/9017669ca5c9400ebe0c066e0648de0c9575100926192324221/calendar.html"
@@ -297,7 +297,16 @@
             title="sasa calendar"
             scrolling="yes"
           ></iframe>
-        </div>
+        </div> -->
+        <form name="appointment" method="POST" data-netlify="true">
+          <input type="text" placeholder="Your Name" name="name" />
+          <input type="email" placeholder="Your Email" name="email" />
+          <p>Please upload an image of your medicaid card</p>
+          <input type="file" id="myFile" name="filename" />
+          <label for="calendar">Book an Appointment:</label>
+          <input type="date" id="calendar" name="calendar" />
+          <button>Send</button>
+        </form>
       </div>
 
       <footer class="box g">
