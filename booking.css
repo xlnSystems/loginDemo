@@ -204,6 +204,11 @@ li.bookingPage-login > a {
   display: none;
 }
 
+.card {
+  box-shadow: 0px 4px 8px 0px #444;
+  padding: 10px;
+}
+
 @media (min-width: 576px) and (max-width: 1200px) {
   .title {
     font-size: 20px;
