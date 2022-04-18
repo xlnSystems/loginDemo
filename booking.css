@@ -129,14 +129,16 @@ li.netlify-identity-item.netlify-identity-user-details {
 }
 .bookingBox {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-form {
-  margin: 10px;
+  justify-content: flex-start;
+  flex-wrap: no-wrap;
 }
 
-.calendarBox {
+#appointmentForm {
+  width: 35%;
+  margin-right: 10px;
+}
+
+/* .calendarBox {
   background-color: #dfe6e9;
   width: 100vw;
   height: 100vh;
@@ -212,7 +214,7 @@ form {
 #month {
   font-size: 30px;
   font-weight: 500;
-}
+} */
 
 .g {
   grid-column: 1 / span 10;
@@ -291,5 +293,19 @@ li.bookingPage-login > a {
   }
   .title {
     font-size: 16px;
+  }
+}
+@media (max-width: 1100px) {
+  #appointmentForm {
+    width: 40%;
+  }
+}
+@media (max-width: 997px) {
+  #appointmentForm {
+    width: 100%;
+    margin: 10px;
+  }
+  .bookingBox {
+    flex-wrap: wrap;
   }
 }

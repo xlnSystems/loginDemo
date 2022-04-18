@@ -1,0 +1,9 @@
+type Entry {
+  name: String!
+  date: String!
+  description: String!
+}
+
+type Query {
+  allEntries: [Entry!]!
+}
