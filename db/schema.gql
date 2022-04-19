@@ -1,7 +1,8 @@
 type Entry {
   name: String!
+  email: String!
   date: String!
-  description: String!
+  time: String!
 }
 
 type Query {

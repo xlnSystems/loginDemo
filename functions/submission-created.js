@@ -4,8 +4,8 @@
 // };
 
 require('dotenv').config();
+require('isomorphic-fetch');
 //const faunadb = require('faunadb');
-const fetch = require('node-fetch');
 
 // module.exports.handler = async (event, context, callback) => {
 //   let payload = {
@@ -55,7 +55,7 @@ const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
   const body = JSON.parse(event.body);
-  const { name, date, description } = body.payload.data;
+  const { name, email, date, time } = body.payload.data;
 
   const response = await fetch('https://graphql.fauna.com/graphql', {
     method: 'POST',
@@ -64,10 +64,11 @@ exports.handler = async (event) => {
     },
     body: JSON.stringify({
       query: `
-        mutation($name: String!, $date: String!, $description: String!) {
-            createEntry(data: { name: $name, date: $date, description: $description } {
+        mutation($name: String!, $email: String!, $date: String!, $time: String!) {
+            createEntry(data: { name: $name, email: $email, date: $date, time: $time } {
             _id
             name
+            email
             date
             description
           }
@@ -75,8 +76,9 @@ exports.handler = async (event) => {
       `,
       variables: {
         name,
+        email,
         date,
-        description,
+        time,
       },
     }),
   })
@@ -86,7 +88,7 @@ exports.handler = async (event) => {
   return {
     statusCode: 302,
     headers: {
-      Location: 'success.html',
+      Location: 'booking-success.html',
       'Cache-Control': 'no-cache',
     },
     body: JSON.stringify({}),

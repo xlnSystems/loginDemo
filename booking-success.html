@@ -312,98 +312,12 @@
       <div class="box c">
         <div class="bookingBox">
           <div id="appointmentForm">
-            <form name="appointment" method="POST" data-netlify="true">
-              <div class="card-header bg-dark">
-                <div>
-                  <h6 style="color: white">Make an Appointment</h6>
-                </div>
-              </div>
-              <div class="card-body">
-                <label for="name" class="form-label">Your Full Name</label>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    id="userName"
-                    class="form-control"
-                    aria-describedby="full name"
-                    name="name"
-                  />
-                </div>
-                <label for="email" class="form-label">Your Email Address</label>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-describedby="email"
-                    name="email"
-                  />
-                </div>
-                <label for="filename" class="form-label"
-                  >Please upload an image of your Medicaid Card</label
-                >
-                <div class="mb-3">
-                  <input
-                    type="file"
-                    class="form-control"
-                    aria-describedby="upload button"
-                    name="filename"
-                  />
-                </div>
-                <label for="calendar" class="form-label">Choose a Day</label>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="calendar"
-                    aria-describedby="calendar"
-                    name="calendar"
-                  />
-                </div>
-                <div class="mb-3">
-                  <select
-                    class="form-control"
-                    name="time"
-                    aria-label="Choose a time"
-                    id="time"
-                  >
-                    <option selected>Select a Time</option>
-                    <option value="10AM EST">10:00 am</option>
-                    <option value="11AM EST">11:00 am</option>
-                    <option value="1PM EST">1:00 pm</option>
-                    <option value="2PM EST">2:00 pm</option>
-                    <option value="3PM EST">3:00 pm</option>
-                    <option value="4PM EST">4:00 pm</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <button class="btn btn-secondary btn-sm">Save</button>
-                </div>
-              </div>
-            </form>
+            <div class="alert alert-success" role="alert">
+              Your appointment has been successfyully made. You will receive an
+              email confirmation with an event invitation. Please check your
+              inbox and rspv to the invitation.
+            </div>
           </div>
-
-          <!-- <div class="calendar">
-            <div class="month">
-              <div class="prev" onclick="moveDate('prev')">
-                <span>&#10094;</span>
-              </div>
-              <h2 id="month"></h2>
-              <p id="date_str"></p>
-              <div class="next" onclick="moveDate('next')">
-                <span>&#10095;</span>
-              </div>
-            </div>
-            <div class="weekdays">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
-            </div>
-            <div class="days"></div>
-          </div> -->
 
           <div id="calendar2"></div>
         </div>
