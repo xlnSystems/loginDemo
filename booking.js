@@ -38,15 +38,14 @@ const getAppointments = () => {
           date: item.date,
           description: item.time,
           type: 'event',
-          color: '#026ee0',
+          color: 'orange',
         };
         return eventObject;
       });
-      $(document).ready(function () {
-        $('#calendar2').evoCalendar({
-          theme: 'Orange Coral',
-          calendarEvents,
-        });
+      console.log(calendarEvents);
+      $('#calendar2').evoCalendar({
+        theme: 'Orange Coral',
+        calendarEvents,
       });
     })
     .catch(console.error);
@@ -60,16 +59,12 @@ const confirmAppointment = () => {
   fetch('.netlify/functions/get-appointments')
     .then((response) => response.json())
     .then((data) => {
-      const calendarEvents = data.data.map((item) => {
-        if (item.date === datePicked && item.time === timePicked) {
+      const Events = data.data.map((item) => {
+        if (item.date == datePicked && item.time == timePicked) {
           document.getElementById('conflictMessage').style.display = 'block';
-        } else if (item.date === datePicked && item.time !== timePicked) {
-          document.getElementById('availableMessage').style.display = 'block';
-          formButton.disabled = false;
-        } else {
-          document.getElementById('conflictMessage').style.display = 'none';
-          document.getElementById('availableMessage').style.display = 'none';
         }
+        // document.getElementById('availableMessage').style.display = 'block';
+        // formButton.disabled = false;
       });
     })
     .catch(console.error);

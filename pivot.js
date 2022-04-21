@@ -200,9 +200,9 @@ function export_table_to_csv(html, filename) {
 }
 var html = document.querySelector('.pvtTable').outerHTML;
 
-const redirectUserOnLogout = () => {
-  window.location.replace('login.html');
-  netlifyIdentity.close();
-};
+// const redirectUserOnLogout = () => {
+//   window.location.replace('login.html');
+//   netlifyIdentity.close();
+// };
 
-netlifyIdentity.on('logout', redirectUserOnLogout);
+// netlifyIdentity.on('logout', redirectUserOnLogout);
