@@ -27,10 +27,8 @@ $(document).ready(function () {
   });
 });
 
-const getAppointments = async () => {
-  await fetch(
-    'https://gallant-allen-474ad7.netlify.app/.netlify/functions/get-appointments'
-  )
+const getAppointments = () => {
+  fetch('.netlify/functions/get-appointments')
     .then((response) => response.json())
     .then((data) => {
       const calendarEvents = data.data.map((item) => {
@@ -55,13 +53,11 @@ const getAppointments = async () => {
 };
 getAppointments();
 
-const confirmAppointment = async () => {
+const confirmAppointment = () => {
   let formButton = document.getElementById('formButton');
   let datePicked = document.getElementById('calendar').value;
   let timePicked = document.getElementById('time').value;
-  await fetch(
-    'https://gallant-allen-474ad7.netlify.app/.netlify/functions/get-appointments'
-  )
+  fetch('.netlify/functions/get-appointments')
     .then((response) => response.json())
     .then((data) => {
       const calendarEvents = data.data.map((item) => {
