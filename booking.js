@@ -28,7 +28,9 @@ $(document).ready(function () {
 });
 
 const getAppointments = () => {
-  fetch('.netlify/functions/get-appointments')
+  fetch(
+    'https://gallant-allen-474ad7.netlify.app/.netlify/functions/get-appointments'
+  )
     .then((response) => response.json())
     .then((data) => {
       const calendarEvents = data.data.map((item) => {
