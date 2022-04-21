@@ -11,7 +11,11 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/css/evo-calendar.min.css"
     />
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.2/evo-calendar/css/evo-calendar.orange-coral.css"
+    />
     <link rel="stylesheet" href="booking.css" />
     <link
       rel="stylesheet"
@@ -312,12 +316,7 @@
       <div class="box c">
         <div class="bookingBox">
           <div id="appointmentForm">
-            <form
-              name="appointment"
-              action="/booking-success.html"
-              method="POST"
-              data-netlify="true"
-            >
+            <form name="appointment" method="POST" data-netlify="true">
               <div class="card-header bg-dark">
                 <div>
                   <h6 style="color: white">Make an Appointment</h6>
@@ -354,14 +353,14 @@
                     name="filename"
                   />
                 </div>
-                <label for="calendar" class="form-label">Choose a Day</label>
+                <label for="date" class="form-label">Choose a Day</label>
                 <div class="mb-3">
                   <input
                     type="text"
                     class="form-control"
                     id="calendar"
                     aria-describedby="calendar"
-                    name="calendar"
+                    name="date"
                   />
                 </div>
                 <div class="mb-3">
@@ -372,43 +371,81 @@
                     id="time"
                   >
                     <option selected>Select a Time</option>
-                    <option value="10AM EST">10:00 am</option>
-                    <option value="11AM EST">11:00 am</option>
-                    <option value="1PM EST">1:00 pm</option>
-                    <option value="2PM EST">2:00 pm</option>
-                    <option value="3PM EST">3:00 pm</option>
-                    <option value="4PM EST">4:00 pm</option>
+                    <option value="9 AM">9:00 am</option>
+                    <option value="10 AM">10:00 am</option>
+                    <option value="11 AM">11:00 am</option>
+                    <option value="1 PM">1:00 pm</option>
+                    <option value="2 PM">2:00 pm</option>
+                    <option value="3 PM">3:00 pm</option>
+                    <option value="4 PM">4:00 pm</option>
                   </select>
                 </div>
+
+                <div style="position: relative">
+                  <div
+                    class="position-absolute bottom-0 end-0 p-3"
+                    id="availableMessage"
+                    style="display: none"
+                  >
+                    <div
+                      class="container border border-info border-4"
+                      style="padding: 5px; background-color: #d3c9bc"
+                    >
+                      <div>
+                        Success! This day and time is available. Click the Make
+                        Appointment button to secure your time.
+                        <div class="mt-2 pt-2 border-top">
+                          <button
+                            type="button"
+                            class="btn btn-secondary btn-sm"
+                            onclick="closeAvailMessage();"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="position-absolute bottom-0 end-0 p-3"
+                    id="conflictMessage"
+                    style="display: none"
+                  >
+                    <div
+                      class="container border border-info border-4"
+                      style="padding: 5px; background-color: #d3c9bc"
+                    >
+                      <div>
+                        This day and time is unavailable. Please choose another.
+                        <div class="mt-2 pt-2 border-top">
+                          <button
+                            type="button"
+                            class="btn btn-secondary btn-sm"
+                            onclick="closeConflictMessage();"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div onclick="confirmAppointment();" class="availability">
+                    Check Availability
+                  </div>
+                </div>
+
                 <div class="mb-3">
-                  <button class="btn btn-secondary btn-sm">Save</button>
+                  <button
+                    class="btn btn-secondary btn-sm"
+                    id="formButton"
+                    disabled
+                  >
+                    Make Appointment
+                  </button>
                 </div>
               </div>
             </form>
           </div>
-
-          <!-- <div class="calendar">
-            <div class="month">
-              <div class="prev" onclick="moveDate('prev')">
-                <span>&#10094;</span>
-              </div>
-              <h2 id="month"></h2>
-              <p id="date_str"></p>
-              <div class="next" onclick="moveDate('next')">
-                <span>&#10095;</span>
-              </div>
-            </div>
-            <div class="weekdays">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
-            </div>
-            <div class="days"></div>
-          </div> -->
 
           <div id="calendar2"></div>
         </div>

@@ -27,76 +27,61 @@ $(document).ready(function () {
   });
 });
 
-//calendar display
-// let dt = new Date();
-// function renderDate() {
-//   dt.setDate(1);
-//   let day = dt.getDay();
-//   let today = new Date();
-//   let endDate = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();
-//   let prevDate = new Date(dt.getFullYear(), dt.getMonth(), 0).getDate();
-//   let months = [
-//     'January',
-//     'February',
-//     'March',
-//     'April',
-//     'May',
-//     'June',
-//     'July',
-//     'August',
-//     'September',
-//     'October',
-//     'November',
-//     'December',
-//   ];
-//   document.getElementById('month').innerHTML = months[dt.getMonth()];
-//   document.getElementById('date_str').innerHTML = dt.toDateString();
-//   let cells = '';
-//   for (x = day; x > 0; x--) {
-//     cells += "<div class='prev_date'>" + (prevDate - x + 1) + '</div>';
-//   }
-//   console.log(day);
-//   for (i = 1; i <= endDate; i++) {
-//     if (i == today.getDate() && dt.getMonth() == today.getMonth())
-//       cells += "<div class='today'>" + i + '</div>';
-//     else cells += '<div>' + i + '</div>';
-//   }
-//   document.getElementsByClassName('days')[0].innerHTML = cells;
-// }
-// function moveDate(para) {
-//   if (para == 'prev') {
-//     dt.setMonth(dt.getMonth() - 1);
-//   } else if (para == 'next') {
-//     dt.setMonth(dt.getMonth() + 1);
-//   }
-//   renderDate();
-// }
-const calendarEvents = [];
-const saveAppointment = () => {
-  let userName = document.getElementById('userName').value;
-  console.log(userName);
-  let date = document.getElementById('calendar').value;
-  console.log(date);
-  let time = document.getElementById('time').value;
-  console.log(time);
-  let id = Math.floor(Math.random() * 100);
-  console.log(id);
-  const eventObject = {
-    id: id,
-    name: userName,
-    date: date,
-    description: time,
-    type: 'event',
-    color: 'orange',
-  };
-  console.log(eventObject);
-  calendarEvents.push(eventObject);
-  console.log(calendarEvents);
-  return calendarEvents;
+const getAppointments = () => {
+  fetch('.netlify/functions/get-appointments')
+    .then((response) => response.json())
+    .then((data) => {
+      const calendarEvents = data.data.map((item) => {
+        const eventObject = {
+          id: item.id,
+          name: item.name,
+          date: item.date,
+          description: item.time,
+          type: 'event',
+          color: '#026ee0',
+        };
+        return eventObject;
+      });
+      $(document).ready(function () {
+        $('#calendar2').evoCalendar({
+          theme: 'Orange Coral',
+          calendarEvents,
+        });
+      });
+    })
+    .catch(console.error);
+};
+getAppointments();
+
+const confirmAppointment = () => {
+  let formButton = document.getElementById('formButton');
+  let datePicked = document.getElementById('calendar').value;
+  let timePicked = document.getElementById('time').value;
+  fetch('.netlify/functions/get-appointments')
+    .then((response) => response.json())
+    .then((data) => {
+      const calendarEvents = data.data.map((item) => {
+        if (item.date === datePicked && item.time === timePicked) {
+          document.getElementById('conflictMessage').style.display = 'block';
+        } else if (item.date === datePicked && item.time !== timePicked) {
+          document.getElementById('availableMessage').style.display = 'block';
+          formButton.disabled = false;
+        } else {
+          document.getElementById('conflictMessage').style.display = 'none';
+          document.getElementById('availableMessage').style.display = 'none';
+        }
+      });
+    })
+    .catch(console.error);
 };
 
-$(document).ready(function () {
-  $('#calendar2').evoCalendar({
-    calendarEvents,
-  });
-});
+window.onload = () => {
+  $('#myModal').modal('show');
+};
+
+const closeAvailMessage = () => {
+  document.getElementById('availableMessage').style.display = 'none';
+};
+const closeConflictMessage = () => {
+  document.getElementById('conflictMessage').style.display = 'none';
+};
