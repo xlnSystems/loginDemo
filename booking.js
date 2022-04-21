@@ -59,7 +59,9 @@ const confirmAppointment = () => {
   let formButton = document.getElementById('formButton');
   let datePicked = document.getElementById('calendar').value;
   let timePicked = document.getElementById('time').value;
-  fetch('.netlify/functions/get-appointments')
+  fetch(
+    'https://gallant-allen-474ad7.netlify.app/.netlify/functions/get-appointments'
+  )
     .then((response) => response.json())
     .then((data) => {
       const calendarEvents = data.data.map((item) => {
