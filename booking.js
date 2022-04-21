@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 const getAppointments = () => {
   fetch(
-    'https://gallant-allen-474ad7.netlify.app/.netlify/functions/get-appointments'
+    'https://hardcore-mayer-7938e9.netlify.app/.netlify/functions/get-appointments'
   )
     .then((response) => response.json())
     .then((data) => {
