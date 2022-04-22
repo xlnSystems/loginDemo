@@ -53,19 +53,23 @@ const getAppointments = () => {
 getAppointments();
 
 const confirmAppointment = () => {
+  let array = [];
   let formButton = document.getElementById('formButton');
   let datePicked = document.getElementById('calendar').value;
   let timePicked = document.getElementById('time').value;
   fetch('.netlify/functions/get-appointments')
     .then((response) => response.json())
     .then((data) => {
-      const Events = data.data.map((item) => {
-        if (item.date == datePicked && item.time == timePicked) {
-          document.getElementById('conflictMessage').style.display = 'block';
-        }
-        // document.getElementById('availableMessage').style.display = 'block';
-        // formButton.disabled = false;
-      });
+      let Events = data.data.filter(
+        (item) => item.date === datePicked && item.time === timePicked
+      );
+      array.push(Events);
+      if (Events.length === 1) {
+        document.getElementById('conflictMessage').style.display = 'block';
+      } else {
+        document.getElementById('availableMessage').style.display = 'block';
+        formButton.disabled = false;
+      }
     })
     .catch(console.error);
 };
@@ -78,5 +82,7 @@ const closeAvailMessage = () => {
   document.getElementById('availableMessage').style.display = 'none';
 };
 const closeConflictMessage = () => {
+  document.getElementById('calendar').value = '';
+  document.getElementById('time').value = '';
   document.getElementById('conflictMessage').style.display = 'none';
 };
