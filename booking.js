@@ -38,7 +38,7 @@ const getAppointments = () => {
           date: item.date,
           description: item.time,
           type: 'event',
-          color: 'orange',
+          color: '#026ee0',
         };
         return eventObject;
       });
